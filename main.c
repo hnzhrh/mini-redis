@@ -9,10 +9,14 @@ void testSds() {
     printf("sds64 length:%lu\n", sizeof(struct sdshdr64));
 }
 
-
+sds testCreateSds(char *s) {
+    return sdsnew(s);
+}
 
 int main() {
-    testSds();
+//    testSds();
+    sds str = testCreateSds("abcdefghijklasdfaasdfasdfasdfasdfasdfasdfasdfasdfasdfa");
+    printf("sds:%s\n", str);
     return 0;
 }
 
